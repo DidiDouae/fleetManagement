@@ -1,8 +1,8 @@
 <!-- begin::Beader -->
 <div class="card-header border-0 py-5">
   <h3 class="card-title align-items-start flex-column">
-    <span class="card-label fw-bolder fs-3 mb-1">Action Needed</span>
-    <span class="text-muted fw-bold fs-7">Complete your profile setup</span>
+    <span class="card-label fw-bolder fs-3 mb-1">Stock Carburant</span>
+    <span class="text-muted fw-bold fs-7">*DATE*</span>
   </h3>
 
   <div class="card-toolbar">
@@ -46,17 +46,64 @@
       ></apx-chart>
     </div>
   </div>
+  <div class="row g-0">
+    <!-- begin::Col -->
+    <div class="col">
+      <div class="d-flex align-items-center me-2">
+        <!-- begin::Symbol -->
+        <div class="symbol symbol-50px me-3">
+          <div class="symbol-label bg-light-primary">
+            <span
+              [inlineSVG]="
+                './assets/media/icons/duotune/abstract/abs009.svg'
+              "
+              class="svg-icon svg-icon-1 svg-icon-primary"
+            ></span>
+          </div>
+        </div>
+        <!-- end::Symbol -->
+
+        <!-- begin::Title -->
+        <div>
+          <div class="fs-4 text-dark fw-bolder">$49  MAD</div>
+          <div class="fs-7 text-muted fw-bold">Total</div>
+        </div>
+        <!-- end::Title -->
+      </div>
+    </div>
+    <!-- end::Col -->
+
+    <!-- begin::Col -->
+    <div class="col">
+      <div class="d-flex align-items-center me-2">
+        <!-- begin::Symbol -->
+        <div class="symbol symbol-50px me-3">
+          <div class="symbol-label bg-light-danger">
+            <span
+              [inlineSVG]="
+                './assets/media/icons/duotune/abstract/abs035.svg'
+              "
+              class="svg-icon svg-icon-1 svg-icon-danger"
+            ></span>
+          </div>
+        </div>
+        <!-- end::Symbol -->
+
+        <!-- begin::Title -->
+        <div>
+          <div class="fs-4 text-dark fw-bolder">5.8 MAD </div>
+          <div class="fs-7 text-muted fw-bold">Restant </div>
+        </div>
+        <!-- end::Title -->
+      </div>
+    </div>
+    <!-- end::Col -->
+  </div>
+  <!-- end::Row -->
 
   <div class="pt-5">
-    <p class="text-center fs-6 pb-5">
-      <span class="badge badge-light-danger fs-8">Notes:</span>&nbsp; Current
-      sprint requires stakeholders
-      <br />
-      to approve newly amended policies
-    </p>
-
     <a href="#" class="btn w-100 py-3" [ngClass]="'btn-' + chartColor">
-      Take Action
+      Ajouter Montant Carburant 
     </a>
   </div>
 </div>

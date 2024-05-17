@@ -12,6 +12,36 @@ const Routing: Routes = [
       import('./builder/builder.module').then((m) => m.BuilderModule),
   },
   {
+    path: 'vehicule',
+    loadChildren: () =>
+      import('./vehicule/vehicule.module').then((m) => m.VehiculeModule),
+  },
+  {
+    path: 'reparation/piece',
+    loadChildren: () =>
+      import('./reparation/piece/piece.module').then((m) => m.PieceModule),
+  },
+  {
+    path: 'reparation/paiement',
+    loadChildren: () =>
+      import('./reparation/paiement/paiement.module').then((m) => m.PaiementModule),
+  },
+  {
+    path: 'reparation/demandeReparation',
+    loadChildren: () =>
+      import('./reparation/demande-reparation/demande-reparation.module').then((m) => m.DemandeReparationModule),
+  },
+  {
+    path: 'mission',
+    loadChildren: () =>
+      import('./mission/mission.module').then((m) => m.MissionModule),
+  },
+  {
+    path: 'chauffeur',
+    loadChildren: () =>
+      import('./chauffeur/chauffeur.module').then((m) => m.ChauffeurModule),
+  },
+  {
     path: 'crafted/pages/profile',
     loadChildren: () =>
       import('../modules/profile/profile.module').then((m) => m.ProfileModule),

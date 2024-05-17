@@ -13,6 +13,10 @@ import { AuthService } from './modules/auth/services/auth.service';
 import { environment } from 'src/environments/environment';
 // #fake-start#
 import { FakeAPIService } from './_fake/fake-api.service';
+import { VehiculeComponent } from './pages/vehicule/vehicule.component';
+import { DropdownMenusModule } from "./_metronic/partials/content/dropdown-menus/dropdown-menus.module";
+import { ReparationComponent } from './pages/reparation/reparation.component';
+import { WidgetsModule } from "./_metronic/partials/content/widgets/widgets.module";
 // #fake-end#
 
 function appInitializer(authService: AuthService) {
@@ -24,33 +28,35 @@ function appInitializer(authService: AuthService) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    TranslateModule.forRoot(),
-    HttpClientModule,
-    ClipboardModule,
-    // #fake-start#
-    environment.isMockEnabled
-      ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {
-          passThruUnknownUrl: true,
-          dataEncapsulation: false,
-        })
-      : [],
-    // #fake-end#
-    AppRoutingModule,
-    InlineSVGModule.forRoot(),
-    NgbModule,
-  ],
-  providers: [
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appInitializer,
-      multi: true,
-      deps: [AuthService],
-    },
-  ],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent, VehiculeComponent, ReparationComponent],
+    providers: [
+        {
+            provide: APP_INITIALIZER,
+            useFactory: appInitializer,
+            multi: true,
+            deps: [AuthService],
+        },
+    ],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        TranslateModule.forRoot(),
+        HttpClientModule,
+        ClipboardModule,
+        // #fake-start#
+        environment.isMockEnabled
+            ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {
+                passThruUnknownUrl: true,
+                dataEncapsulation: false,
+            })
+            : [],
+        // #fake-end#
+        AppRoutingModule,
+        InlineSVGModule.forRoot(),
+        NgbModule,
+        DropdownMenusModule,
+        WidgetsModule
+    ]
 })
 export class AppModule {}
