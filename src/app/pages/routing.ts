@@ -17,19 +17,19 @@ const Routing: Routes = [
       import('./vehicule/vehicule.module').then((m) => m.VehiculeModule),
   },
   {
-    path: 'reparation/piece',
+    path: 'piece',
     loadChildren: () =>
-      import('./reparation/piece/piece.module').then((m) => m.PieceModule),
+      import('./piece/piece.module').then((m) => m.PieceModule),
   },
   {
-    path: 'reparation/paiement',
+    path: 'paiement',
     loadChildren: () =>
-      import('./reparation/paiement/paiement.module').then((m) => m.PaiementModule),
+      import('./paiement/paiement.module').then((m) => m.PaiementModule),
   },
   {
-    path: 'reparation/demandeReparation',
+    path: 'demande',
     loadChildren: () =>
-      import('./reparation/demande-reparation/demande-reparation.module').then((m) => m.DemandeReparationModule),
+      import('./demande/demande.module').then((m) => m.DemandeModule),
   },
   {
     path: 'mission',

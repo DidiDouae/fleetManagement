@@ -1,9 +1,30 @@
 <!-- begin::Header -->
+<style>
+  .card-toolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+</style>
+<div class="card-toolbar">
+  <a href="#" class="btn btn-sm btn-light-primary">
+    <span
+      [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
+      class="svg-icon svg-icon-3"
+    ></span>
+    Nouveau Ordre de Paiement
+  </a>
+</div>
 <div class="card-header border-0 pt-5">
   <h3 class="card-title align-items-start flex-column">
-    <span class="card-label fw-bolder fs-3 mb-1">Latest Products</span>
-    <span class="text-muted mt-1 fw-bold fs-7">More than 400 new products</span>
+    <span class="card-label fw-bolder fs-3 mb-1">Suivi Ordre de paiement </span>
+    <span class="text-muted mt-1 fw-bold fs-7">Nombre des ordres de </span>
   </h3>
+ 
   <div class="card-toolbar">
     <ul class="nav">
       <li class="nav-item">
@@ -93,13 +114,7 @@
             <tr>
               <td>
                 <div class="symbol symbol-45px me-2">
-                  <span class="symbol-label">
-                    <img
-                      src="./assets/media/svg/brand-logos/plurk.svg"
-                      class="h-50 align-self-center"
-                      alt=""
-                    />
-                  </span>
+                  num Ordre 
                 </div>
               </td>
               <td>
@@ -107,13 +122,13 @@
                   href="#"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                  Brad Simmons
+                  Designation
                 </a>
-                <span class="text-muted fw-bold d-block">Movie Creator</span>
+                <span class="text-muted fw-bold d-block">quantité</span>
               </td>
-              <td class="text-end text-muted fw-bold">React, HTML</td>
+              <td class="text-end text-muted fw-bold">Montant</td>
               <td class="text-end">
-                <span class="badge badge-light-success">Approved</span>
+                <span class="badge badge-light-primary">Date</span>
               </td>
               <td class="text-end">
                 <a
@@ -134,13 +149,7 @@
             <tr>
               <td>
                 <div class="symbol symbol-45px me-2">
-                  <span class="symbol-label">
-                    <img
-                      src="./assets/media/svg/brand-logos/telegram.svg"
-                      class="h-50 align-self-center"
-                      alt=""
-                    />
-                  </span>
+                  num Ordre 
                 </div>
               </td>
               <td>
@@ -148,13 +157,13 @@
                   href="#"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                  Popular Authors
+                  Designation
                 </a>
-                <span class="text-muted fw-bold d-block">Most Successful</span>
+                <span class="text-muted fw-bold d-block">quantité</span>
               </td>
-              <td class="text-end text-muted fw-bold">Python, MySQL</td>
+              <td class="text-end text-muted fw-bold">Montant</td>
               <td class="text-end">
-                <span class="badge badge-light-warning">In Progress</span>
+                <span class="badge badge-light-primary">Date</span>
               </td>
               <td class="text-end">
                 <a
@@ -175,13 +184,7 @@
             <tr>
               <td>
                 <div class="symbol symbol-45px me-2">
-                  <span class="symbol-label">
-                    <img
-                      src="./assets/media/svg/brand-logos/vimeo.svg"
-                      class="h-50 align-self-center"
-                      alt=""
-                    />
-                  </span>
+                  num Ordre 
                 </div>
               </td>
               <td>
@@ -189,13 +192,13 @@
                   href="#"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                  New Users
+                  Designation
                 </a>
-                <span class="text-muted fw-bold d-block">Awesome Users</span>
+                <span class="text-muted fw-bold d-block">quantité</span>
               </td>
-              <td class="text-end text-muted fw-bold">Laravel,Metronic</td>
+              <td class="text-end text-muted fw-bold">Montant</td>
               <td class="text-end">
-                <span class="badge badge-light-primary">Success</span>
+                <span class="badge badge-light-primary">Date</span>
               </td>
               <td class="text-end">
                 <a
@@ -216,13 +219,7 @@
             <tr>
               <td>
                 <div class="symbol symbol-45px me-2">
-                  <span class="symbol-label">
-                    <img
-                      src="./assets/media/svg/brand-logos/bebo.svg"
-                      class="h-50 align-self-center"
-                      alt=""
-                    />
-                  </span>
+                  num Ordre 
                 </div>
               </td>
               <td>
@@ -230,13 +227,13 @@
                   href="#"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                  Active Customers
+                  Designation
                 </a>
-                <span class="text-muted fw-bold d-block">Movie Creator</span>
+                <span class="text-muted fw-bold d-block">quantité</span>
               </td>
-              <td class="text-end text-muted fw-bold">AngularJS, C#</td>
+              <td class="text-end text-muted fw-bold">Montant</td>
               <td class="text-end">
-                <span class="badge badge-light-danger">Rejected</span>
+                <span class="badge badge-light-primary">Date</span>
               </td>
               <td class="text-end">
                 <a
@@ -257,13 +254,7 @@
             <tr>
               <td>
                 <div class="symbol symbol-45px me-2">
-                  <span class="symbol-label">
-                    <img
-                      src="./assets/media/svg/brand-logos/kickstarter.svg"
-                      class="h-50 align-self-center"
-                      alt=""
-                    />
-                  </span>
+                  num Ordre 
                 </div>
               </td>
               <td>
@@ -271,13 +262,13 @@
                   href="#"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                  Bestseller Theme
+                  Designation
                 </a>
-                <span class="text-muted fw-bold d-block">Best Customers</span>
+                <span class="text-muted fw-bold d-block">quantité</span>
               </td>
-              <td class="text-end text-muted fw-bold">ReactJS, Ruby</td>
+              <td class="text-end text-muted fw-bold">Montant</td>
               <td class="text-end">
-                <span class="badge badge-light-warning">In Progress</span>
+                <span class="badge badge-light-primary">Date</span>
               </td>
               <td class="text-end">
                 <a

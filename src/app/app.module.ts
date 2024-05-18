@@ -18,6 +18,8 @@ import { DropdownMenusModule } from "./_metronic/partials/content/dropdown-menus
 import { ReparationComponent } from './pages/reparation/reparation.component';
 import { WidgetsModule } from "./_metronic/partials/content/widgets/widgets.module";
 import { ConsommationComponent } from './pages/consommation/consommation.component';
+import { PieceComponent } from './pages/piece/piece.component';
+import { DemandeComponent } from './pages/demande/demande.component';
 // #fake-end#
 
 function appInitializer(authService: AuthService) {
@@ -29,7 +31,7 @@ function appInitializer(authService: AuthService) {
 }
 
 @NgModule({
-    declarations: [AppComponent, VehiculeComponent, ReparationComponent, ConsommationComponent],
+    declarations: [AppComponent, VehiculeComponent, ReparationComponent, ConsommationComponent, PieceComponent, DemandeComponent],
     providers: [
         {
             provide: APP_INITIALIZER,
