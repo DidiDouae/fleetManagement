@@ -17,6 +17,7 @@ import { VehiculeComponent } from './pages/vehicule/vehicule.component';
 import { DropdownMenusModule } from "./_metronic/partials/content/dropdown-menus/dropdown-menus.module";
 import { ReparationComponent } from './pages/reparation/reparation.component';
 import { WidgetsModule } from "./_metronic/partials/content/widgets/widgets.module";
+import { ConsommationComponent } from './pages/consommation/consommation.component';
 // #fake-end#
 
 function appInitializer(authService: AuthService) {
@@ -28,7 +29,7 @@ function appInitializer(authService: AuthService) {
 }
 
 @NgModule({
-    declarations: [AppComponent, VehiculeComponent, ReparationComponent],
+    declarations: [AppComponent, VehiculeComponent, ReparationComponent, ConsommationComponent],
     providers: [
         {
             provide: APP_INITIALIZER,

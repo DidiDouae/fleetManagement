@@ -42,6 +42,11 @@ const Routing: Routes = [
       import('./chauffeur/chauffeur.module').then((m) => m.ChauffeurModule),
   },
   {
+    path: 'consommation',
+    loadChildren: () =>
+      import('./consommation/consommation.module').then((m) => m.ConsommationModule),
+  },
+  {
     path: 'crafted/pages/profile',
     loadChildren: () =>
       import('../modules/profile/profile.module').then((m) => m.ProfileModule),

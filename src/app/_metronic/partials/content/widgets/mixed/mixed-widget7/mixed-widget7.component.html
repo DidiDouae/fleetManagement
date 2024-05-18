@@ -1,3 +1,37 @@
+<style>
+  .col-xl-6 {
+    max-width: 20%;
+  }
+
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .pt-5 {
+    padding-top: 3rem; /* Adjust as needed */
+  }
+
+  .custom-btn {
+    background-color: #6e767b; /* Custom background color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center text */
+    display: block; /* Make it a block element */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    font-size: 1rem; /* Adjust font size */
+     
+  }
+
+  .custom-btn:hover {
+    background-color: #1f1d1e; /* Darker shade on hover */
+    text-decoration: none; /* Remove underline on hover */
+  }
+</style>
+
+
+
 <!-- begin::Beader -->
 <div class="card-header border-0 py-5">
   <h3 class="card-title align-items-start flex-column">
@@ -102,7 +136,7 @@
   <!-- end::Row -->
 
   <div class="pt-5">
-    <a href="#" class="btn w-100 py-3" [ngClass]="'btn-' + chartColor">
+    <a href="#" class=" btn custom-btn w-100 py-3" [ngClass]="'btn-' + chartColor">
       Ajouter Montant Carburant 
     </a>
   </div>

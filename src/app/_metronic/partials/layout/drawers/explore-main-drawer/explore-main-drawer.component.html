@@ -6,7 +6,7 @@
   data-bs-toggle="tooltip"
   data-bs-placement="right"
   data-bs-trigger="hover">
-  <span id="kt_explore_toggle_label">Explore</span>
+  <span id="kt_explore_toggle_label">Consommation</span>
 </button>
 <!--end::Exolore drawer toggle-->
 
@@ -27,7 +27,7 @@
   <div class="card shadow-none rounded-0 w-100">
     <!--begin::Header-->
     <div class="card-header" id="kt_explore_header">
-      <h3 class="card-title fw-bolder text-gray-700">Explore {{ appThemeName }}</h3>
+      <h3 class="card-title fw-bolder text-gray-700">Stock Carburant</h3>
 
       <div class="card-toolbar">
         <button type="button" class="btn btn-sm btn-icon btn-active-light-primary me-n5" id="kt_explore_close">
@@ -53,7 +53,60 @@
         data-kt-scroll-offset="5px">
 
         <!--begin::Wrapper-->
-       
+        <div class="row g-0">
+          <!-- begin::Col -->
+          <div class="col">
+            <div class="d-flex align-items-center me-2">
+              <!-- begin::Symbol -->
+              <div class="symbol symbol-50px me-3">
+                <div class="symbol-label bg-light-primary">
+                  <span
+                    [inlineSVG]="
+                      './assets/media/icons/duotune/abstract/abs009.svg'
+                    "
+                    class="svg-icon svg-icon-1 svg-icon-primary"
+                  ></span>
+                </div>
+              </div>
+              <!-- end::Symbol -->
+      
+              <!-- begin::Title -->
+              <div>
+                <div class="fs-4 text-dark fw-bolder">$49  MAD</div>
+                <div class="fs-7 text-muted fw-bold">Total</div>
+              </div>
+              <!-- end::Title -->
+            </div>
+          </div>
+          <!-- end::Col -->
+      
+          <!-- begin::Col -->
+          <div class="col">
+            <div class="d-flex align-items-center me-2">
+              <!-- begin::Symbol -->
+              <div class="symbol symbol-50px me-3">
+                <div class="symbol-label bg-light-danger">
+                  <span
+                    [inlineSVG]="
+                      './assets/media/icons/duotune/abstract/abs035.svg'
+                    "
+                    class="svg-icon svg-icon-1 svg-icon-danger"
+                  ></span>
+                </div>
+              </div>
+              <!-- end::Symbol -->
+      
+              <!-- begin::Title -->
+              <div>
+                <div class="fs-4 text-dark fw-bolder">5.8 MAD </div>
+                <div class="fs-7 text-muted fw-bold">Restant </div>
+              </div>
+              <!-- end::Title -->
+            </div>
+          </div>
+          <!-- end::Col -->
+        </div>
+        <!-- end::Row -->
 
        
         <!--end::Wrapper-->

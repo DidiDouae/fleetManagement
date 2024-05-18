@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { WidgetsModule } from '../../../_metronic/partials';
 
 import { DemandeReparationRoutingModule } from './demande-reparation-routing.module';
 import{DemandeReparationComponent} from './demande-reparation.component';
@@ -16,6 +17,7 @@ import{DemandeReparationComponent} from './demande-reparation.component';
         component: DemandeReparationComponent,
       },
     ]),
+    WidgetsModule
   ]
 })
 export class DemandeReparationModule { }

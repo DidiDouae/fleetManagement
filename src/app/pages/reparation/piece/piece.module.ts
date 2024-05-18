@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PieceComponent } from './piece.component';
-
+import { WidgetsModule } from '../../../_metronic/partials';
 import { PieceRoutingModule } from './piece-routing.module';
 
 
@@ -17,6 +17,7 @@ import { PieceRoutingModule } from './piece-routing.module';
         component: PieceComponent,
       },
     ]),
+    WidgetsModule
   ]
 })
 export class PieceModule { }

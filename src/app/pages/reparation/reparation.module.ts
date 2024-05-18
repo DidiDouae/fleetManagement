@@ -5,6 +5,7 @@ import { ReparationRoutingModule } from './reparation-routing.module';
 import { PieceComponent } from './piece/piece.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { DemandeReparationComponent } from './demande-reparation/demande-reparation.component';
+import { WidgetsModule } from '../../_metronic/partials';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { DemandeReparationComponent } from './demande-reparation/demande-reparat
   ],
   imports: [
     CommonModule,
-    ReparationRoutingModule
+    ReparationRoutingModule,
+    WidgetsModule
   ]
 })
 export class ReparationModule { }
