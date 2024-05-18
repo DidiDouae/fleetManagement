@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
+
 export class LoginComponent implements OnInit, OnDestroy {
   // KeenThemes mock, change it to:
   defaultAuth: any = {
