@@ -23,4 +23,10 @@ import { WidgetsModule } from '../../_metronic/partials';
     WidgetsModule 
   ]
 })
-export class ChauffeurModule { }
+export class ChauffeurModule {
+  id?:number;
+    nom?:string;
+    prenom?:string;
+    orderMissionIds?: number[];
+    demandeReparationIds?: number[];
+ }

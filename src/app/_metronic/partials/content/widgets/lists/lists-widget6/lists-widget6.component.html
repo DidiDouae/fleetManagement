@@ -1,17 +1,22 @@
-
 <!-- begin::Header -->
 <div class="card-header border-0">
   <h3 class="card-title fw-bolder text-dark">Missions</h3>
   <div class="card-toolbar">
     <!-- begin::Menu -->
     <div class="card-toolbar">
-      <a href="#" class="btn btn-sm btn-light-primary">
-        <span
-          [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
-          class="svg-icon svg-icon-3"
-        ></span>
-        Nouvelle Mission
-      </a>
+      <button
+        class="btn btn-sm btn-light-primary"
+        data-kt-menu-trigger="click"
+        data-kt-menu-placement="bottom-end"
+        data-kt-menu-flip="top-end">
+          <span
+            [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
+            class="svg-icon svg-icon-3"
+          ></span>
+          Nouvelle Mission 
+        </button>
+  
+        <app-quick-links-inner-4></app-quick-links-inner-4>
     </div>
     <button
       type="button"
@@ -30,8 +35,9 @@
   </div>
 </div>
 <!-- end::Header -->
+
 <!-- begin::Body -->
-<div class="card-body pt-0">
+<div *ngFor="let mission of missions" class="card-body pt-0">
   <!-- begin::Item -->
   <div class="d-flex align-items-center bg-light-info rounded p-5 mb-7">
     <!-- begin::Icon -->
@@ -42,174 +48,41 @@
       ></span>
     </span>
     <!-- end::Icon -->
+
     <!-- begin::Title -->
     <div class="flex-grow-1 me-2">
       <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6">
-        Mission 1
+        {{ mission.id }}
       </a>
-      <span class="text-muted fw-bold d-block">Due in 2 Days</span>
+      <span class="text-muted fw-bold d-block">{{ mission.dateOrderMission }}</span>
+      <span class="text-muted fw-bold d-block">{{ mission.lieu}}</span>
     </div>
     <!-- end::Title -->
-    <!-- begin::Lable -->
-    <span class="fw-bolder text-info py-8 ml-12">En cours  </span>
-    <a
-              href="#"
-              class="
-                btn btn-icon  btn-active-color-primary btn-sm
-                me-1
-              "
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
-                class="svg-icon svg-icon-info"
-              ></span>
-            </a>
-            <a
-              href="#"
-              class="btn btn-icon  btn-active-color-primary btn-sm"
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'"
-                class="svg-icon svg-icon-info"
-              ></span>
-            </a>
-    <!-- end::Lable -->
-  </div>
-  <!-- end::Item -->
-  <!-- begin::Item -->
-  <div class="d-flex align-items-center bg-light-success rounded p-5 mb-7">
-    <!-- begin::Icon -->
-    <span class="svg-icon svg-icon-success me-5">
+
+    <!-- begin::Label -->
+    <span class="fw-bolder text-info py-8 ml-12">En cours</span>
+    <button  class="btn btn-icon btn-active-color-primary btn-sm me-1"
+    data-kt-menu-trigger="click"
+        data-kt-menu-placement="bottom-end"
+        data-kt-menu-flip="top-end"
+        (click)="selectMission(mission)">
       <span
-        [inlineSVG]="'./assets/media/icons/duotune/abstract/abs027.svg'"
-        class="svg-icon svg-icon-1"
+        [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
+        class="svg-icon svg-icon-info"
       ></span>
-    </span>
-    <!-- end::Icon -->
-    <!-- begin::Title -->
-    <div class="flex-grow-1 me-2">
-      <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6">
-        Mission 3
-      </a>
-      <span class="text-muted fw-bold d-block">Due in 2 Days</span>
-    </div>
-    <!-- end::Title -->
-    <!-- begin::Lable -->
-    <span class="fw-bolder text-success py-8 ml-10">Fini</span>
-    <a
-              href="#"
-              class="
-                btn btn-icon btn-active-color-primary btn-sm
-                me-1
-              "
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
-                class="svg-icon svg-icon-success"
-              ></span>
-            </a>
-            <a
-              href="#"
-              class="btn btn-icon  btn-active-color-primary btn-sm"
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'"
-                class="svg-icon svg-icon-success"
-              ></span>
-            </a>
-    <!-- end::Lable -->
-  </div>
-  <!-- end::Item -->
-  <!-- begin::Item -->
-  <div class="d-flex align-items-center bg-light-danger rounded p-5 mb-7">
-    <!-- begin::Icon -->
-    <span class="svg-icon svg-icon-danger me-5 ml-10">
+    </button>
+    <app-quick-links-inner-5 [selectedMission]="selectedMission"></app-quick-links-inner-5>
+
+    <a  href="/mission" (click)="delete(mission.id)" class="btn btn-icon btn-active-color-primary btn-sm">
       <span
-        [inlineSVG]="'./assets/media/icons/duotune/abstract/abs027.svg'"
-        class="svg-icon svg-icon-1"
+        [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'"
+        class="svg-icon svg-icon-info"
       ></span>
-    </span>
-    <!-- end::Icon -->
-    <!-- begin::Title -->
-    <div class="flex-grow-1 me-2">
-      <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6">
-        Mission 2
-      </a>
-      <span class="text-muted fw-bold d-block">Due in 5 Days</span>
-    </div>
-    <!-- end::Title -->
-    <!-- begin::Lable -->
-    <span class="fw-bolder text-danger  py-8 ml-10">A venir </span>
-    <a
-              href="#"
-              class="
-                btn btn-icon   btn-active-color-primary btn-sm
-                me-1
-              "
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
-                class="svg-icon svg-icon-danger"
-              ></span>
-            </a>
-            <a
-              href="#"
-              class="btn btn-icon  btn-active-color-primary btn-sm"
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'"
-                class="svg-icon svg-icon-danger"
-              ></span>
-            </a>
-    <!-- end::Lable -->
+    </a>
+    
+
+    <!-- end::Label -->
   </div>
-  <!-- end::Item -->
-  <!-- begin::Item -->
-  <div class="d-flex align-items-center bg-light-info rounded p-4">
-    <!-- begin::Icon -->
-    <span class="svg-icon svg-icon-info me-5">
-      <span
-        [inlineSVG]="'./assets/media/icons/duotune/abstract/abs027.svg'"
-        class="svg-icon svg-icon-1"
-      ></span>
-    </span>
-    <!-- end::Icon -->
-    <!-- begin::Title -->
-    <div class="flex-grow-1 me-2">
-      <a href="#" class="fw-bolder text-gray-800 text-hover-primary fs-6">
-        Mission 4
-      </a>
-      <span class="text-muted fw-bold d-block">Due in 7 Days</span>
-    </div>
-    <!-- end::Title -->
-    <!-- begin::Lable -->
-    <span class="fw-bolder text-info py-8 mr-140 !important">En cours </span>
-    <span class="parent-class">
-    <a
-              href="#"
-              class="
-                btn btn-icon btn-active-color-primary btn-sm
-                me-0.5
-              "
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
-                class="svg-icon svg-icon-info"
-              ></span>
-            </a>
-            <a
-              href="#"
-              class="btn btn-icon  btn-active-color-primary btn-sm"
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'"
-                class="svg-icon svg-icon-info"
-              ></span>
-            </a>
-          </span>
-    <!-- end::Lable -->
-  </div>
-  
   <!-- end::Item -->
 </div>
 <!-- end::Body -->

@@ -11,13 +11,19 @@
 }
 </style>
 <div class="card-toolbar">
-  <a href="#" class="btn btn-sm btn-light-primary">
+  <button
+  class="btn btn-sm btn-light-primary"
+  data-kt-menu-trigger="click"
+  data-kt-menu-placement="bottom-end"
+  data-kt-menu-flip="top-end">
     <span
       [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
       class="svg-icon svg-icon-3"
     ></span>
-    Nouvelle Demande de Reparation
-  </a>
+    Nouveau Demande Reparation
+  </button>
+  <app-quick-links-inner-8></app-quick-links-inner-8>
+
 </div>
 <div class="card-header border-0 pt-5">
   <h3 class="card-title align-items-start flex-column">
@@ -92,7 +98,7 @@
         <table class="table align-middle gs-0 gy-3">
           <!-- begin::Table head -->
           <thead>
-            <tr>
+            <tr  >
               <th class="p-0 w-50px"></th>
               <th class="p-0 min-w-150px"></th>
               <th class="p-0 min-w-120px"></th>
@@ -101,10 +107,11 @@
           <!-- end::Table head -->
           <!-- begin::Table body -->
           <tbody>
-            <tr>
+            <tr *ngFor="let demande of  demandes">
               <td>
                 <div class="symbol symbol-50px me-2">
-                  ID
+                  {{demande.id}}
+
                 </div>
               </td>
               <td>
@@ -112,165 +119,42 @@
                   href="#"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                  Designation
+                {{demande.id}}
                 </a>
                 <span class="text-muted fw-bold d-block fs-7"
-                  >Id vehicule</span
+                  >{{demande.dateDemandeReparation}}</span
                 >
               </td>
               <td class="text-end">
                 <span class="text-dark fw-bolder d-block fs-7"
                   >4:20PM, 03 Sep</span
                 >
-                <span class="text-muted fw-bold d-block fs-8">Date</span>
+                <span class="text-muted fw-bold d-block fs-8">Date {{demande.id_chauffeur}}</span>
               </td>
               <td class="text-end">
                 <a
-                  href="#"
-                  class="
-                    btn btn-sm btn-icon btn-bg-light btn-active-color-primary
-                  "
-                >
-                  <i class="bi bi-three-dots fs-5"></i>
-                </a>
+              href="/demande"
+              class="
+                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
+                px-4
+                me-2
+              "
+              data-kt-menu-trigger="click"
+              data-kt-menu-placement="bottom-end"
+              data-kt-menu-flip="top-end"
+              (click)="selectDemande(demande)"
+            >
+              Modifier
+            </a>
+            <app-quick-links-inner-9 [selectedDemandeReparation]="demande"></app-quick-links-inner-9>
+
+    
+    <a href="/demande" (click)="delete(demande.id)" class="btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm px-4">
+              Supprimer
+            </a>
               </td>
             </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px me-2">
-                  ID
-                </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Designation
-                </a>
-                <span class="text-muted fw-bold d-block fs-7">Id vehicule</span>
-              </td>
-              <td class="text-end">
-                <span class="text-dark fw-bolder d-block fs-7"
-                  >10:05PM, 25 Oct</span
-                >
-                <span class="text-muted fw-bold d-block fs-8">Date</span>
-              </td>
-              <td class="text-end">
-                <a
-                  href="#"
-                  class="
-                    btn btn-sm btn-icon btn-bg-light btn-active-color-primary
-                  "
-                >
-                  <i class="bi bi-three-dots fs-5"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px me-2">
-                
-                    ID
-                  
-                </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                Designation
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >Id vehicule</span
-                >
-              </td>
-              <td class="text-end">
-                <span class="text-dark fw-bolder d-block fs-7"
-                  >3:22PM, 07 Sep</span
-                >
-                <span class="text-muted fw-bold d-block fs-8">Date</span>
-              </td>
-              <td class="text-end">
-                <a
-                  href="#"
-                  class="
-                    btn btn-sm btn-icon btn-bg-light btn-active-color-primary
-                  "
-                >
-                  <i class="bi bi-three-dots fs-5"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px me-2">
-                  ID
-                </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Designation
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >Id vehicule</span
-                >
-              </td>
-              <td class="text-end">
-                <span class="text-dark fw-bolder d-block fs-7"
-                  >1:20PM, 02 Dec</span
-                >
-                <span class="text-muted fw-bold d-block fs-8">Date</span>
-              </td>
-              <td class="text-end">
-                <a
-                  href="#"
-                  class="
-                    btn btn-sm btn-icon btn-bg-light btn-active-color-primary
-                  "
-                >
-                  <i class="bi bi-three-dots fs-5"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px me-2">
-                  ID
-                </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Designation
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >id vehicule </span
-                >
-              </td>
-              <td class="text-end">
-                <span class="text-dark fw-bolder d-block fs-7"
-                  >6:20PM, 07 Sep</span
-                >
-                <span class="text-muted fw-bold d-block fs-8">Date</span>
-              </td>
-              <td class="text-end">
-                <a
-                  href="#"
-                  class="
-                    btn btn-sm btn-icon btn-bg-light btn-active-color-primary
-                  "
-                >
-                  <i class="bi bi-three-dots fs-5"></i>
-                </a>
-              </td>
-            </tr>
+          
           </tbody>
           <!-- end::Table body -->
         </table>

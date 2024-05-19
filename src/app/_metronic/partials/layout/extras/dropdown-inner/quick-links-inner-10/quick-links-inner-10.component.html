@@ -1,0 +1,36 @@
+<div class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-10 py-10" style="padding: 20px;">
+  <h3 class="fw-bold mb-10">Ajouter Pièce</h3>
+</div>
+<div class="row g-10 justify-content-center">
+  <div class="col-12 col-md-6 form-container" style="max-height: 500px; overflow-y: auto; padding: 20px; border: 1px solid #007bff; border-radius: 10px;">
+    <form #editForm="ngForm" (ngSubmit)="submitForm(editForm)">
+      <div *ngIf="message" [ngClass]="{'alert': true, 'alert-success': messageType === 'success', 'alert-danger': messageType === 'error'}">
+        {{ message }}
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="nom" class="form-label">Durée de vie</label>
+          <input type="text" class="form-control" id="dureevie" required [(ngModel)]="piece.dure_vie" name="dureevie">
+        </div>
+        <div class="col-md-6">
+          <label for="nom" class="form-label">Désignation</label>
+          <input type="text" class="form-control" id="designation" required [(ngModel)]="piece.description" name="designation">
+        </div>
+        <div class="col-md-6">
+          <label for="prenom" class="form-label">Date Echéance</label>
+          <input type="text" class="form-control" id="Echéance"  [(ngModel)]="piece.date_echeance" name="Echéance">
+        </div>
+        <div class="col-md-6">
+          <label for="nom" class="form-label">Date Changement</label>
+          <input type="text" class="form-control" id="chqngement" required [(ngModel)]="piece.date_changement" name="chqngement">
+        </div>
+        <div class="col-md-6">
+          <label for="nom" class="form-label">Vehicule Id</label>
+          <input type="text" class="form-control" id="id_vehicule" required [(ngModel)]="piece.id_vehicule" name="id_vehicule">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">submit</button>
+      <button type="close" class="btn btn-danger" >Fermer</button>
+    </form>
+  </div>
+  </div>

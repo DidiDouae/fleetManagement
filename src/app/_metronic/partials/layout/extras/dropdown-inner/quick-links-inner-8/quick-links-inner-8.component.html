@@ -1,0 +1,33 @@
+<div class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-10 py-10" style="padding: 20px;">
+  <h3 class="fw-bold mb-10">Ajouter Demande de Reparation</h3>
+</div>
+<div class="row g-10 justify-content-center">
+  <div class="col-12 col-md-6 form-container" style="max-height: 500px; overflow-y: auto; padding: 20px; border: 1px solid #007bff; border-radius: 10px;">
+    <form #editForm="ngForm" (ngSubmit)="submitForm(editForm)">
+      <div *ngIf="message" [ngClass]="{'alert': true, 'alert-success': messageType === 'success', 'alert-danger': messageType === 'error'}">
+        {{ message }}
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="nom" class="form-label">Date</label>
+          <input type="text" class="form-control" id="nom" required [(ngModel)]="demandeReparation.dateDemandeReparation" name="date">
+        </div>
+        <div class="col-md-6">
+          <label for="nom" class="form-label">designation</label>
+          <input type="text" class="form-control" id="designation" required [(ngModel)]="demandeReparation.designationDemandeReparation" name="designation">
+        </div>
+        <div class="col-md-6">
+        <label for="nom" class="form-label">Vehicule Id</label>
+        <input type="text" class="form-control" id="id_vehicule" required [(ngModel)]="demandeReparation.id_vehicule" name="id_vehicule">
+      </div>
+        <div class="col-md-6">
+          <label for="nom" class="form-label">Chauffeur Id</label>
+          <input type="text" class="form-control" id="montant" required [(ngModel)]="demandeReparation.id_chauffeur" name="montant">
+        </div>
+
+      </div>
+      <button type="submit" class="btn btn-primary">submit</button>
+      <button type="close" class="btn btn-danger" >Fermer</button>
+    </form>
+  </div>
+  </div>

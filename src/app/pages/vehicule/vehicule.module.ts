@@ -21,6 +21,8 @@ import { VehiculeRoutingModule } from './vehicule-routing.module';
       },
     ]),
     WidgetsModule,
+ 
+    
   ]
 })
 export class VehiculeModule {

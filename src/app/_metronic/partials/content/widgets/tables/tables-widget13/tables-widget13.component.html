@@ -1,5 +1,7 @@
+
+
 <!-- begin::Header -->
-<div class="card-header border-0 pt-5">
+<div class="card-header border-0 pt-50">
   <h3 class="card-title align-items-start flex-column">
     <span class="card-label fw-bolder fs-3 mb-1">  Liste Vehicules </span>
     <span class="text-muted mt-1 fw-bold fs-7"> {{ vehicules.length }} Vehicules </span>
@@ -8,14 +10,21 @@
     <!-- begin::Menu -->
 
     <div class="card-toolbar">
-      <a href="#" class="btn btn-sm btn-light-primary">
+    <button
+      class="btn btn-sm btn-light-primary"
+      data-kt-menu-trigger="click"
+      data-kt-menu-placement="bottom-end"
+      data-kt-menu-flip="top-end">
         <span
           [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
           class="svg-icon svg-icon-3"
         ></span>
         Nouvelle Vehicule 
-      </a>
+      </button>
+
+      <app-quick-links-inner></app-quick-links-inner>
     </div>
+    
     <div>
     <button
       type="button"
@@ -144,40 +153,34 @@
           <td class="text-dark fw-bolder text-hover-primary fs-6">7</td>
           
           <td class="text-end">
-            <a
-              href="#"
-              class="
-                btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                me-1
-              "
+             
+            <a href="/vehicule" 
+            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+            data-kt-menu-trigger="click"
+            data-kt-menu-placement="bottom-end"
+            data-kt-menu-flip="top-end"
             >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/files/fil001.svg'"
-                class="svg-icon svg-icon-3"
-              ></span>
+           <span [inlineSVG]="'./assets/media/icons/duotune/files/fil001.svg'" class="svg-icon svg-icon-3"></span>
+           
+         </a>
+         <app-dropdown-menu1></app-dropdown-menu1>
+         
+        <a href="/vehicule" class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1"
+                   data-kt-menu-trigger="click"
+                   data-kt-menu-placement="bottom-end"
+                   data-kt-menu-flip="top-end"
+                   >
+                <span [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'" class="svg-icon svg-icon-3"></span>
+              
             </a>
-            <a
-              href="#"
-              class="
-                btn btn-icon btn-bg-light btn-active-color-primary btn-sm
-                me-1
-              "
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
-                class="svg-icon svg-icon-3"
-              ></span>
-            </a>
-            <a
-              href="#"
-              class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm"
-            >
-              <span
-                [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'"
-                class="svg-icon svg-icon-3"
-              ></span>
-            </a>
+            <app-quick-links-inner></app-quick-links-inner>
+
+              <a href="/vehicule" (click)="delete(vehicule.id); " class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
+                <span [inlineSVG]="'./assets/media/icons/duotune/general/gen027.svg'" class="svg-icon svg-icon-3"></span>
+              </a>
+           
           </td>
+          
         </tr>
        
       </tbody>

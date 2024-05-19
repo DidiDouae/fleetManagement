@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { CarburantAnnuel } from './consommation.model';
+import { ConsommationService } from './consommation.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-consommation',
@@ -7,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsommationComponent implements OnInit {
 
-  constructor() { }
 
   ngOnInit(): void {
   }
+ 
 
 }

@@ -14,4 +14,16 @@ export class VehiculeService {
   getAll(): Observable<Vehicule[]>{
     return this.http.get<Vehicule[]>(baseUrl);
   }
+  delete(id: number): Observable<void> {
+    return this.http.delete<void>(`${baseUrl}/${id}`);
+  }
+  create(Vehicule:any):Observable<any>{
+    return this.http.post<any>(baseUrl,Vehicule);
+  }
+  update(Vehicule:any): Observable<Vehicule> {
+    return this.http.put<Vehicule>(`${baseUrl}/${Vehicule.id}`, Vehicule);
+  }
+  
+  
+  
 }

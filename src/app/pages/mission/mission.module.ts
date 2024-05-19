@@ -22,4 +22,12 @@ import { RouterModule } from '@angular/router';
     WidgetsModule ,
   ]
 })
-export class MissionModule { }
+export class MissionModule { 
+  id?: number;
+    dateOrderMission?: Date;
+    lieu?: string;
+    dotationOrderMission?: number;
+    orderMissionPdf?: string;
+    id_vehicule?: number;
+    id_chauffeur?:number;
+}

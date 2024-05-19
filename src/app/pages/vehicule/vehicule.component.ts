@@ -14,9 +14,23 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 export class VehiculeComponent implements OnInit {
   vehicules: Vehicule[] = [];
+  newVehicule:any = {immatricule:'',
+    dateMiseCirculation:'',
+    type: '',
+    pf: '',
+    mc: '',
+    genre: '',  
+      nbrPlace: '',
+    marque: '',
+    kilometrage:'',
+    piecesIds:'',
+    orderPaimentsIds: '',
+    orderMissionIds: '',
+    demandeReparationIds: '',
+    consommation: '',
 
+  };
   constructor(private vehiculeService: VehiculeService,private cdr: ChangeDetectorRef ) { }
-
   ngOnInit(): void {
     this.fetchVehicules();
     
@@ -37,8 +51,35 @@ export class VehiculeComponent implements OnInit {
       }
     );
   }
- 
-  
 
+  delete(id:number):void {
+    this.vehiculeService.delete(id).subscribe(()=>{ 
+
+      this.vehicules=this.vehicules.filter(Vehicule=>Vehicule.id!==id);
+
+    })
+    ;
+  }
+
+  create():void{
+    this.vehiculeService.create(this.newVehicule).subscribe(createdVehicule=>{
+      this.vehicules.push(createdVehicule);
+      this.newVehicule={immatricule:'',
+      dateMiseCirculation:'',
+      type: '',
+      pf: '',
+      mc: '',
+      genre: '',  
+        nbrPlace: '',
+      marque: '',
+      kilometrage:'',
+      piecesIds:'',
+      orderPaimentsIds: '',
+      orderMissionIds: '',
+      demandeReparationIds: '',
+      consommation: ''};
+    });
+  }
+ 
   
 }

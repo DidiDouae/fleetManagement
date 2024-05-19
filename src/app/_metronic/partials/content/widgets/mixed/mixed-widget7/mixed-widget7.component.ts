@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { getCSSVariableValue } from '../../../../../kt/_utils';
+import { CarburantAnnuel } from 'src/app/pages/consommation/consommation.model';
+import { ConsommationService } from 'src/app/pages/consommation/consommation.service';
 @Component({
   selector: 'app-mixed-widget7',
   templateUrl: './mixed-widget7.component.html',
@@ -9,11 +11,52 @@ export class MixedWidget7Component implements OnInit {
   @Input() chartHeight: string;
   chartOptions: any = {};
 
-  constructor() {}
+ 
 
+ 
+
+  carburant: CarburantAnnuel[]= [];
+  restant: number= 0;
+  selectedCarburant: CarburantAnnuel = new CarburantAnnuel();
+
+  constructor(private consommationservice: ConsommationService,private cdr: ChangeDetectorRef ) { }
   ngOnInit(): void {
-    this.chartOptions = getChartOptions(this.chartHeight, this.chartColor);
+    this.fetchVehicules();
+    this.fetchrest();
+    
   }
+
+  fetchVehicules(): void {
+    this.consommationservice.getAll().subscribe(
+      data => {
+        this.carburant = data;
+        console.log('Tester ');
+        console.log(this.carburant);
+        this.cdr.detectChanges(); ///////////// Trigger change detection
+        
+      },
+      
+      error => {
+        console.error('Error fetching drivers: ', error);
+      }
+    );
+  }
+  fetchrest(): void {
+    this.consommationservice.carburantrestant().subscribe(
+      data => {
+        this.restant= data;
+        console.log('Tester ');
+        console.log(this.restant);
+        this.cdr.detectChanges(); ///////////// Trigger change detection
+        
+      },
+      
+      error => {
+        console.error('Error fetching drivers: ', error);
+      }
+    );
+  }
+
 }
 
 function getChartOptions(chartHeight: string, chartColor: string) {
@@ -62,4 +105,5 @@ function getChartOptions(chartHeight: string, chartColor: string) {
     },
     labels: ['Progress'],
   };
+
 }

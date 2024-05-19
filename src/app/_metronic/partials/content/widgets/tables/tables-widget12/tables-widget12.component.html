@@ -2,19 +2,25 @@
 <div class="card-header border-0 pt-5">
   <h3 class="card-title align-items-start flex-column">
     <span class="card-label fw-bolder fs-3 mb-1">Liste Chauffeurs </span>
-    <span class="text-muted mt-1 fw-bold fs-7">*Inserer nombres des chauffeurs *</span>
+    <span class="text-muted mt-1 fw-bold fs-7">{{  chauffeurs.length }} Chauffeurs</span>
   </h3>
   <div class="card-toolbar">
 
     <div class="card-toolbar">
-      <a href="#" class="btn btn-sm btn-light-primary">
-        <span
-          [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
-          class="svg-icon svg-icon-3"
-        ></span>
-        Nouveau Chauffeur 
-      </a>
-    </div>
+      <button
+        class="btn btn-sm btn-light-primary"
+        data-kt-menu-trigger="click"
+        data-kt-menu-placement="bottom-end"
+        data-kt-menu-flip="top-end">
+          <span
+            [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
+            class="svg-icon svg-icon-3"
+          ></span>
+          Nouveau Chauffeur
+        </button>
+  
+        <app-quick-links-inner-2></app-quick-links-inner-2>
+      </div>
     <div>
   </div>
 
@@ -77,7 +83,7 @@
       <!-- end::Table head -->
       <!-- begin::Table body -->
       <tbody>
-        <tr>
+        <tr *ngFor="let chauffeur of chauffeurs">
           <td>
             <div class="d-flex align-items-center">
               <div class="d-flex justify-content-start flex-column">
@@ -85,168 +91,8 @@
                   href="#"
                   class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
                 >
-                  101458
-                </a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-             BAKKALI 
-            </a>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-              Mohammed 
-            </a>
-          </td>
-          <td></td>
-          <td class="text-end">
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-                me-2
-              "
-            >
-              Modifier
-            </a>
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-              "
-            >
-              Supprimer
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="d-flex align-items-center">
-              <div class="d-flex justify-content-start flex-column">
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  124589
-                </a>
-      
-              </div>
-            </div>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-              SAADANI
-            </a>
-            <span class="text-muted fw-bold text-muted d-block fs-7"></span>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-            Ahmed
-            </a>
-            
-          </td>
-          <td></td>
-          <td class="text-end">
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-                me-2
-              "
-            >
-              Modifier
-            </a>
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-              "
-            >
-              Supprimer 
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
+                {{ chauffeur.id }}
 
-              <div class="d-flex justify-content-start flex-column">
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  100256
-                </a>
-                
-              </div>
-            
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-              FARIDI
-            </a>
-           
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-              FOUAD
-            </a>
-          </td>
-          <td></td>
-          <td class="text-end">
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-                me-2
-              "
-            >
-              Modifier
-            </a>
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-              "
-            >
-              Supprimer
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="d-flex align-items-center">
-              <div class="d-flex justify-content-start flex-column">
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  100459 
                 </a>
               </div>
             </div>
@@ -255,94 +101,45 @@
             <a
               href="#"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
+
             >
-            YAACOUBI
+            {{ chauffeur.nom }}
+
             </a>
-            
           </td>
           <td>
             <a
               href="#"
               class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
             >
-              AHMED
+            {{ chauffeur.prenom }}
             </a>
           </td>
           <td></td>
-          <td class="text-end">
+          <td >
             <a
-              href="#"
+              href="/chauffeur"
               class="
                 btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
                 px-4
                 me-2
               "
+              data-kt-menu-trigger="click"
+              data-kt-menu-placement="bottom-end"
+              data-kt-menu-flip="top-end"
+              (click)="selectChauffeur(chauffeur)"
             >
               Modifier
             </a>
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-              "
-            >
+            <app-quick-links-inner-3 [selectedChauffeur]="selectedChauffeur"></app-quick-links-inner-3>
+
+            <a href="/chauffeur" (click)="delete(chauffeur.id)" class="btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm px-4">
               Supprimer
             </a>
+
           </td>
         </tr>
-        <tr>
-          <td>
-            <div class="d-flex align-items-center">
-              <div class="d-flex justify-content-start flex-column">
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  110732
-                </a>
-              </div>
-            </div>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-              BARAKA
-            </a>
-          </td>
-          <td>
-            <a
-              href="#"
-              class="text-dark fw-bolder text-hover-primary d-block mb-1 fs-6"
-            >
-              RAAOUF
-            </a>
-          </td>
-          <td></td>
-          <td class="text-end">
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-                me-2
-              "
-            >
-              Modifier
-            </a>
-            <a
-              href="#"
-              class="
-                btn btn-bg-light btn-color-muted btn-active-color-primary btn-sm
-                px-4
-              "
-            >
-              Supprimer
-            </a>
-          </td>
-        </tr>
+        
       </tbody>
       <!-- end::Table body -->
     </table>

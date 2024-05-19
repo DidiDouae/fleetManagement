@@ -32,5 +32,14 @@ export class TablesWidget13Component implements OnInit {
       }
     );
   }
+
+  
+  delete(id:any):any {
+    this.vehiculeService.delete(id).subscribe(()=>{ this.vehicules=this.vehicules.filter(Vehicule=>Vehicule.id!==id);
+      
+    })
+    ;
+  }
+ 
  
 }

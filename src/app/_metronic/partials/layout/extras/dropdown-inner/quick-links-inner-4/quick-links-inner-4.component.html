@@ -1,0 +1,39 @@
+<div class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-1050 py-100" style="padding: 20px;">
+  <h3 class="fw-bold mb-100">Ajouter nouvelle Mission</h3>
+</div>
+<div class="row g-100 justify-content-center">
+  <div class="col-12 col-md-6 form-container" style="max-height: 500px; overflow-y: auto; padding: 20px; border: 1px solid #007bff; border-radius: 10px;">
+    <form #MissionForm="ngForm" (ngSubmit)="submitForm(MissionForm)">
+      <div *ngIf="message" [ngClass]="{'alert': true, 'alert-success': messageType === 'success', 'alert-danger': messageType === 'error'}">
+        {{ message }}
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="immatricule" class="form-label">lieu</label>
+          <input type="text" class="form-control" id="lieu" required [(ngModel)]="mission.lieu" name="immatricule">
+        </div>
+        <div class="col-md-6">
+          <label for="dateMiseCirculation" class="form-label">Date Mission</label>
+          <input type="date" class="form-control" id="dateOrderMission" [(ngModel)]="mission.dateOrderMission" name="dateOrderMission">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="pf" class="form-label">Dotation Ordre Mission</label>
+          <input type="number" class="form-control" id="dotationOrderMission" required [(ngModel)]="mission.dotationOrderMission" name="dotationOrderMission">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="mc" class="form-label">Id Chauffeur </label>
+          <input type="number" class="form-control" id="chauffeur" required [(ngModel)]="mission.id_vehicule" name="chauffeur">
+        </div>
+        <div class="col-md-6">
+          <label for="genre" class="form-label">Id Vehicule</label>
+          <input type="number" class="form-control" id="vehicule" required [(ngModel)]="mission.id_chauffeur" name="vehicule">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

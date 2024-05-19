@@ -1,105 +1,59 @@
-<div
-  class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-9 py-10"
-  [style.background-image]="'url(./assets/media/misc/pattern-1.jpg)'"
->
-  <h3 class="text-white fw-bold mb-3">Quick Links</h3>
-  <span class="badge bg-primary py-2 px-3">25 pending tasks</span>
+<div class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-1050 py-100" style="padding: 20px;">
+  <h3 class="fw-bold mb-100">Ajouter nouvelle Vehicule</h3>
 </div>
-
-<div class="row g-0">
-  <div class="col-6">
-    <a
-      class="
-        d-flex
-        flex-column flex-center
-        h-100
-        p-6
-        bg-hover-light
-        border-end border-bottom
-        cursor-pointer
-      "
-    >
-      <span
-        [inlineSVG]="'./assets/media/icons/duotune/finance/fin009.svg'"
-        class="svg-icon svg-icon-3x svg-icon-primary mb-2"
-      ></span>
-      <span class="fs-5 fw-bold text-gray-800 mb-0">Accounting</span>
-      <span class="fs-7 text-gray-400">eCommerce</span>
-    </a>
+<div class="row g-100 justify-content-center">
+  <div class="col-12 col-md-6 form-container" style="max-height: 500px; overflow-y: auto; padding: 20px; border: 1px solid #007bff; border-radius: 10px;">
+    <form #vehicleForm="ngForm" (ngSubmit)="submitForm(vehicleForm)">
+      <div *ngIf="message" [ngClass]="{'alert': true, 'alert-success': messageType === 'success', 'alert-danger': messageType === 'error'}">
+        {{ message }}
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="immatricule" class="form-label">Immatricule</label>
+          <input type="text" class="form-control" id="immatricule" required [(ngModel)]="vehicule.immatricule" name="immatricule">
+        </div>
+        <div class="col-md-6">
+          <label for="dateMiseCirculation" class="form-label">Date de Mise en Circulation</label>
+          <input type="date" class="form-control" id="dateMiseCirculation" [(ngModel)]="vehicule.dateMiseCirculation" name="dateMiseCirculation">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="type" class="form-label">Type</label>
+          <input type="text" class="form-control" id="type" required [(ngModel)]="vehicule.type" name="type">
+        </div>
+        <div class="col-md-6">
+          <label for="pf" class="form-label">PF</label>
+          <input type="number" class="form-control" id="pf" required [(ngModel)]="vehicule.pf" name="pf">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="mc" class="form-label">MC</label>
+          <input type="text" class="form-control" id="mc" required [(ngModel)]="vehicule.mc" name="mc">
+        </div>
+        <div class="col-md-6">
+          <label for="genre" class="form-label">Genre</label>
+          <input type="text" class="form-control" id="genre" required [(ngModel)]="vehicule.genre" name="genre">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="nbrPlace" class="form-label">Nombre de Places</label>
+          <input type="number" class="form-control" id="nbrPlace" [(ngModel)]="vehicule.nbrPlace" name="nbrPlace">
+        </div>
+        <div class="col-md-6">
+          <label for="marque" class="form-label">Marque</label>
+          <input type="text" class="form-control" id="marque" [(ngModel)]="vehicule.marque" name="marque">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="kilometrage" class="form-label">Kilométrage</label>
+          <input type="number" step="0.1" class="form-control" id="kilometrage" [(ngModel)]="vehicule.kilometrage" name="kilometrage">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
   </div>
-
-  <div class="col-6">
-    <a
-      class="
-        d-flex
-        flex-column flex-center
-        h-100
-        p-6
-        bg-hover-light
-        border-bottom
-        cursor-pointer
-      "
-    >
-      <span
-        [inlineSVG]="'./assets/media/icons/duotune/communication/com010.svg'"
-        class="svg-icon svg-icon-3x svg-icon-primary mb-2"
-      ></span>
-      <span class="fs-5 fw-bold text-gray-800 mb-0">Administration</span>
-      <span class="fs-7 text-gray-400">Console</span>
-    </a>
-  </div>
-
-  <div class="col-6">
-    <a
-      class="
-        d-flex
-        flex-column flex-center
-        h-100
-        p-6
-        bg-hover-light
-        border-end
-        cursor-pointer
-      "
-    >
-      <span
-        [inlineSVG]="'./assets/media/icons/duotune/abstract/abs042.svg'"
-        class="svg-icon svg-icon-3x svg-icon-primary mb-2"
-      ></span>
-      <span class="fs-5 fw-bold text-gray-800 mb-0">Projects</span>
-      <span class="fs-7 text-gray-400">Pending Tasks</span>
-    </a>
-  </div>
-
-  <div class="col-6">
-    <a
-      class="
-        d-flex
-        flex-column flex-center
-        h-100
-        p-6
-        bg-hover-light
-        cursor-pointer
-      "
-    >
-      <span
-        [inlineSVG]="'./assets/media/icons/duotune/finance/fin006.svg'"
-        class="svg-icon svg-icon-3x svg-icon-primary mb-2"
-      ></span>
-      <span class="fs-5 fw-bold text-gray-800 mb-0">Customers</span>
-      <span class="fs-7 text-gray-400">Latest cases</span>
-    </a>
-  </div>
-</div>
-
-<div class="py-2 text-center border-top">
-  <a
-    routerLink="/crafted/pages/profile"
-    class="btn btn-color-gray-600 btn-active-color-primary"
-  >
-    View All
-    <span
-      [inlineSVG]="'./assets/media/icons/duotune/arrows/arr064.svg'"
-      class="svg-icon svg-icon-5"
-    ></span>
-  </a>
 </div>

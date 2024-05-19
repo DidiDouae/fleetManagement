@@ -82,7 +82,7 @@
   </div>
   <div class="row g-0">
     <!-- begin::Col -->
-    <div class="col">
+    <div  *ngFor="let car of carburant  " class="col">
       <div class="d-flex align-items-center me-2">
         <!-- begin::Symbol -->
         <div class="symbol symbol-50px me-3">
@@ -99,7 +99,7 @@
 
         <!-- begin::Title -->
         <div>
-          <div class="fs-4 text-dark fw-bolder">$49  MAD</div>
+          <div class="fs-4 text-dark fw-bolder">{{ car.carburantAnnuel }} DH </div>
           <div class="fs-7 text-muted fw-bold">Total</div>
         </div>
         <!-- end::Title -->
@@ -124,8 +124,8 @@
         <!-- end::Symbol -->
 
         <!-- begin::Title -->
-        <div>
-          <div class="fs-4 text-dark fw-bolder">5.8 MAD </div>
+        <div>  
+          <div class="fs-4 text-dark fw-bolder">{{ restant }}  MAD </div>
           <div class="fs-7 text-muted fw-bold">Restant </div>
         </div>
         <!-- end::Title -->
@@ -136,9 +136,19 @@
   <!-- end::Row -->
 
   <div class="pt-5">
-    <a href="#" class=" btn custom-btn w-100 py-3" [ngClass]="'btn-' + chartColor">
-      Ajouter Montant Carburant 
-    </a>
+    <button
+    class="btn btn-sm btn-light-primary"
+    data-kt-menu-trigger="click"
+    data-kt-menu-placement="bottom-end"
+    data-kt-menu-flip="top-end">
+      <span
+        [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
+        class="svg-icon svg-icon-3"
+      ></span>
+      Ajouter Carburant 
+    </button>
+
+    <app-quick-links-inner-12></app-quick-links-inner-12>
   </div>
 </div>
 <!-- end::Body -->

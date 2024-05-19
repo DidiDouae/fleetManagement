@@ -7,13 +7,19 @@
   <div class="card-toolbar">
     <!-- begin::Menu-->
     <div class="card-toolbar">
-      <a href="#" class="btn btn-sm btn-light-primary">
-        <span
-          [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
-          class="svg-icon svg-icon-3"
-        ></span>
-        Nouvelle Piece
-      </a>
+      <button
+  class="btn btn-sm btn-light-primary"
+  data-kt-menu-trigger="click"
+  data-kt-menu-placement="bottom-end"
+  data-kt-menu-flip="top-end">
+    <span
+      [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
+      class="svg-icon svg-icon-3"
+    ></span>
+    Nouvelle Piece
+  </button>
+  <app-quick-links-inner-10></app-quick-links-inner-10>
+
     </div>
     <button
       type="button"
@@ -27,143 +33,47 @@
         class="svg-icon svg-icon-2"
       ></span>
     </button>
-    
     <app-dropdown-menu1></app-dropdown-menu1>
     <!-- end::Menu-->
   </div>
 </div>
 <!-- end::Header-->
+
 <!-- begin::Body-->
-<div class="card-body pt-5">
+<div *ngFor="let piece of pieces" class="card-body pt-5">
   <!-- begin::Item-->
   <div class="d-flex align-items-sm-center mb-7">
     <!-- begin::Symbol-->
     <div class="symbol symbol-50px me-5">
-      Id piece
+      {{ piece.idPiece }}
     </div>
     <!-- end::Symbol-->
     <!-- begin::Section-->
     <div class="d-flex align-items-center flex-row-fluid flex-wrap">
       <div class="flex-grow-1 me-2">
         <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">
-          Description
+          {{ piece.idPiece }}
         </a>
-        <span class="text-muted fw-bold d-block fs-7"
-          >durreVie</span
-        >
+        <span class="text-muted fw-bold d-block fs-7">
+          {{ piece.dure_vie }} Ans
+        </span>
       </div>
-      <span class="badge badge-light fw-bolder my-2">Date Echeance</span>
+      <span class="badge badge-light fw-bolder my-2">{{ piece.date_echeance }}</span>
+      <span class="badge badge-danger fw-bolder my-2">{{ piece.date_changement }}</span>
     </div>
+    <button  class="btn btn-icon btn-active-color-primary btn-sm me-1"
+    data-kt-menu-trigger="click"
+        data-kt-menu-placement="bottom-end"
+        data-kt-menu-flip="top-end"
+        (click)="selectPiece(piece)">
+      <span
+        [inlineSVG]="'./assets/media/icons/duotune/art/art005.svg'"
+        class="svg-icon svg-icon-light"
+      ></span>
+    </button>
+    <app-quick-links-inner-11 [selectedPiece]="selectedPiece"></app-quick-links-inner-11>
     <!-- end::Section-->
   </div>
   <!-- end::Item-->
-  <!-- begin::Item-->
-  <div class="d-flex align-items-sm-center mb-7">
-    <!-- begin::Symbol-->
-    <div class="symbol symbol-50px me-5">
-      Id piece
-    </div>
-    <!-- end::Symbol-->
-    <!-- begin::Section-->
-    <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-      <div class="flex-grow-1 me-2">
-        <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">
-          Description
-        </a>
-        <span class="text-muted fw-bold d-block fs-7"
-          >durreVie</span
-        >
-      </div>
-      <span class="badge badge-light fw-bolder my-2">Date Echeance</span>
-    </div>
-    <!-- end::Section-->
-  </div>
-  <!-- end::Item-->
-  <!-- begin::Item-->
-  <div class="d-flex align-items-sm-center mb-7">
-    <!-- begin::Symbol-->
-    <div class="symbol symbol-50px me-5">
-      Id piece
-    </div>
-    <!-- end::Symbol-->
-    <!-- begin::Section-->
-    <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-      <div class="flex-grow-1 me-2">
-        <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">
-          Description
-        </a>
-        <span class="text-muted fw-bold d-block fs-7"
-          >durreVie</span
-        >
-      </div>
-      <span class="badge badge-light fw-bolder my-2">Date Echeance</span>
-    </div>
-    <!-- end::Section-->
-  </div>
-  <!-- end::Item-->
-  <!-- begin::Item-->
-  <div class="d-flex align-items-sm-center mb-7">
-    <!-- begin::Symbol-->
-    <div class="symbol symbol-50px me-5">
-      Id piece
-    </div>
-    <!-- end::Symbol-->
-    <!-- begin::Section-->
-    <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-      <div class="flex-grow-1 me-2">
-        <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">
-          Description
-        </a>
-        <span class="text-muted fw-bold d-block fs-7"
-          >durreVie</span
-        >
-      </div>
-      <span class="badge badge-light fw-bolder my-2">Date Echeance</span>
-    </div>
-    <!-- end::Section-->
-  </div>
-  <!-- end::Item-->
-
-  <div class="d-flex align-items-sm-center mb-7">
-    <!-- begin::Symbol-->
-    <div class="symbol symbol-50px me-5">
-      Id piece
-    </div>
-    <!-- end::Symbol-->
-    <!-- begin::Section-->
-    <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-      <div class="flex-grow-1 me-2">
-        <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">
-          Description
-        </a>
-        <span class="text-muted fw-bold d-block fs-7"
-          >durreVie</span
-        >
-      </div>
-      <span class="badge badge-light fw-bolder my-2">Date Echeance</span>
-    </div>
-    <!-- end::Section-->
-  </div>
-
-  <div class="d-flex align-items-sm-center mb-7">
-    <!-- begin::Symbol-->
-    <div class="symbol symbol-50px me-5">
-      Id piece
-    </div>
-    <!-- end::Symbol-->
-    <!-- begin::Section-->
-    <div class="d-flex align-items-center flex-row-fluid flex-wrap">
-      <div class="flex-grow-1 me-2">
-        <a href="#" class="text-gray-800 text-hover-primary fs-6 fw-bolder">
-          Description
-        </a>
-        <span class="text-muted fw-bold d-block fs-7"
-          >durreVie</span
-        >
-      </div>
-      <span class="badge badge-light fw-bolder my-2">Date Echeance</span>
-    </div>
-    <!-- end::Section-->
-  </div>
 </div>
 <!-- end::Body-->
