@@ -1,4 +1,4 @@
-import { Component, HostBinding } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DemandeReparations } from 'src/app/pages/demande/demande.model';
 import { DemandeService } from 'src/app/pages/demande/demande.service';
@@ -8,7 +8,9 @@ import { DemandeService } from 'src/app/pages/demande/demande.service';
   selector: 'app-quick-links-inner-8',
   templateUrl: './quick-links-inner-8.component.html',
 })
-export class QuickLinksInnerComponent8 {
+export class QuickLinksInnerComponent8  implements OnInit{
+  isModalOpen: boolean = true; // Propriété pour contrôler la visibilité du modèle
+
   demandeReparation: DemandeReparations = {
     id: 0,
     dateDemandeReparation: new Date,
@@ -26,6 +28,9 @@ export class QuickLinksInnerComponent8 {
 
   constructor(
     private demandeService: DemandeService) { }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
  
 
@@ -61,5 +66,9 @@ export class QuickLinksInnerComponent8 {
       id_vehicule: 0,
     };
   }
+
+closeModal() {
+  this.isModalOpen = false; // Fermer le modèle
+}
 
 }

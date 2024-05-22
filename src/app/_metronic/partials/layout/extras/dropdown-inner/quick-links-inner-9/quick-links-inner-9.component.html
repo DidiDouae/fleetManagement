@@ -1,7 +1,7 @@
-<div class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-10 py-10" style="padding: 20px;">
+<div *ngIf="isModalOpen"  class="d-flex flex-column flex-center bgi-no-repeat rounded-top px-10 py-10" style="padding: 20px;">
   <h3 class="fw-bold mb-10">Modifier Demande de Reparation</h3>
 </div>
-<div class="row g-10 justify-content-center">
+<div *ngIf="isModalOpen" class="row g-10 justify-content-center">
   <div class="col-12 col-md-6 form-container" style="max-height: 500px; overflow-y: auto; padding: 20px; border: 1px solid #007bff; border-radius: 10px;">
     <form #editForm="ngForm" (ngSubmit)="EditForm(editForm)">
       <div *ngIf="message" [ngClass]="{'alert': true, 'alert-success': messageType === 'success', 'alert-danger': messageType === 'error'}">
@@ -13,7 +13,7 @@
           <input type="text" class="form-control" id="nom" required [(ngModel)]="selectedDemandeReparation.dateDemandeReparation" name="date">
         </div>
         <div class="col-md-6">
-          <label for="nom" class="form-label">designation</label>
+          <label for="nom" class="form-label">Designation</label>
           <input type="text" class="form-control" id="designation" required [(ngModel)]="selectedDemandeReparation.designationDemandeReparation" name="designation">
         </div>
         <div class="col-md-6">
@@ -27,7 +27,7 @@
 
       </div>
       <button type="submit" class="btn btn-primary">submit</button>
-      <button type="close" class="btn btn-danger" >Fermer</button>
+      <button type="button" class="btn btn-danger" (click)="closeModal()">Fermer</button>
     </form>
   </div>
   </div>

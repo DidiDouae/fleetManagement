@@ -1,6 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { DemandeReparations } from 'src/app/pages/demande/demande.model';
 import { DemandeService } from 'src/app/pages/demande/demande.service';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+
 
 type Tabs =
   | 'kt_table_widget_8_tab_1'
@@ -13,6 +15,8 @@ type Tabs =
 })
 export class TablesWidget8Component implements OnInit {
   
+  
+  
 
   activeTab: Tabs = 'kt_table_widget_8_tab_1';
 
@@ -23,7 +27,14 @@ export class TablesWidget8Component implements OnInit {
   activeClass(tab: Tabs) {
     return tab === this.activeTab ? 'show active' : '';
   }
-
+  isModalOpen: boolean = false;
+  openInnerComponent() {
+    this.isModalOpen = true;
+  }
+  years: number[] = [];
+  selectedYear: number;
+  months: string[] = [];
+  selectedMonth: string;
   
   
   demandes: DemandeReparations[] = [];
@@ -32,6 +43,8 @@ export class TablesWidget8Component implements OnInit {
   constructor(private demandeService: DemandeService,private cdr: ChangeDetectorRef ) { }
   ngOnInit(): void {
     this.fetchVehicules();
+    this.initializeYears();
+    this.initializeMonths();
     
   }
 
@@ -61,4 +74,43 @@ export class TablesWidget8Component implements OnInit {
   selectDemande(demande: DemandeReparations) {
     this.selectedDemandeReparation = { ...demande}; // Make a copy to avoid direct binding issues
   }
+
+
+
+
+  initializeYears(): void {
+    const currentYear = new Date().getFullYear();
+    for (let year = currentYear; year >= currentYear - 20; year--) {
+      this.years.push(year);
+    }
+    this.selectedYear = this.years[0]; // Default to the current year
+  }
+
+  onYearChange(event: Event): void {
+    const target = event.target as HTMLSelectElement;
+    this.selectedYear = +target.value;
+    console.log('Selected Year:', this.selectedYear);
+    // Add your logic here to handle the year change
+  }
+
+  initializeMonths(): void {
+    this.months = ['Mois', 
+      'Janvier', 'Fevrier ', 'Mars', 'Avril', 'Mai', 'Juin', 
+      'Juillet', 'Août', 'Septembre ', 'Octobre', 'Novembre', 'Decembre'
+    ];
+    this.selectedMonth = this.months[new Date().getMonth()]; // Default to the current month
+  }
+
+  onMonthChange(event: Event): void {
+    const target = event.target as HTMLSelectElement;
+    this.selectedMonth = target.value;
+    console.log('Selected Month:', this.selectedMonth);
+    // Add your logic here to handle the month change
+  }
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+ 
+  
 }

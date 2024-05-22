@@ -8,6 +8,7 @@ import { DemandeService } from 'src/app/pages/demande/demande.service';
   templateUrl: './quick-links-inner-9.component.html',
 })
 export class QuickLinksInnerComponent9 implements OnInit {
+  isModalOpen: boolean = true; // Propriété pour contrôler la visibilité du modèle
 
   @Input() selectedDemandeReparation: DemandeReparations = new DemandeReparations();
   message: string = '';
@@ -26,7 +27,7 @@ export class QuickLinksInnerComponent9 implements OnInit {
     if (form.valid && this.selectedDemandeReparation) {
       this.demandeService.update(this.selectedDemandeReparation).subscribe(
         () => {
-          this.message = 'Chauffeur modifié avec succès !';
+          this.message = 'Deamnde modifié avec succès !';
           this.messageType = 'success';
           this.selectedDemandeReparation = new DemandeReparations();
         },
@@ -40,4 +41,11 @@ export class QuickLinksInnerComponent9 implements OnInit {
       this.messageType = 'error';
     }
   }
+
+
+closeModal() {
+  this.isModalOpen = false; // Fermer le modèle
+}
+
+
 }

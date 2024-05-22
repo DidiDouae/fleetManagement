@@ -15,69 +15,44 @@
   class="btn btn-sm btn-light-primary"
   data-kt-menu-trigger="click"
   data-kt-menu-placement="bottom-end"
-  data-kt-menu-flip="top-end">
+  data-kt-menu-flip="top-end"  (click)="openInnerComponent()">
     <span
       [inlineSVG]="'./assets/media/icons/duotune/arrows/arr075.svg'"
       class="svg-icon svg-icon-3"
     ></span>
     Nouveau Demande Reparation
   </button>
-  <app-quick-links-inner-8></app-quick-links-inner-8>
+  <app-quick-links-inner-8  *ngIf="isModalOpen"></app-quick-links-inner-8>
 
 </div>
 <div class="card-header border-0 pt-5">
   <h3 class="card-title align-items-start flex-column">
     <span class="card-label fw-bolder fs-3 mb-1">DEMANDE DE REPARATION </span>
-    <span class="text-muted mt-1 fw-bold fs-7">Nombre ordre de demande </span>
+    <span class="text-muted mt-1 fw-bold fs-7">1 Demandes </span>
   </h3>
   <div class="card-toolbar">
     <ul class="nav">
       <li class="nav-item">
-        <a
-          class="
-            nav-link
-            btn btn-sm btn-color-muted btn-active btn-active-light-primary
-            fw-bolder
-            px-4
-            me-1
-          "
-          data-bs-toggle="tab"
-          [ngClass]="activeClass('kt_table_widget_8_tab_1')"
-          (click)="setTab('kt_table_widget_8_tab_1')"
+        
+        <select
+          class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light-primary fw-bolder px-4 me-1"
+          
+          (change)="onYearChange($event)"
         >
-          Month
-        </a>
+          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
       </li>
+    </ul>
+    <ul class="nav">
       <li class="nav-item">
-        <a
-          class="
-            nav-link
-            btn btn-sm btn-color-muted btn-active btn-active-light-primary
-            fw-bolder
-            px-4
-            me-1
-          "
-          data-bs-toggle="tab"
-          [ngClass]="activeClass('kt_table_widget_8_tab_2')"
-          (click)="setTab('kt_table_widget_8_tab_2')"
+        
+        <select
+          class="nav-link btn btn-sm btn-color-muted btn-active btn-active-light-primary fw-bolder px-4 me-1"
+          
+          (change)="onMonthChange($event)"
         >
-          Week
-        </a>
-      </li>
-      <li class="nav-item">
-        <a
-          class="
-            nav-link
-            btn btn-sm btn-color-muted btn-active btn-active-light-primary
-            fw-bolder
-            px-4
-          "
-          data-bs-toggle="tab"
-          [ngClass]="activeClass('kt_table_widget_8_tab_3')"
-          (click)="setTab('kt_table_widget_8_tab_3')"
-        >
-          Day
-        </a>
+          <option *ngFor="let month of months" [value]="month">{{ month }}</option>
+        </select>
       </li>
     </ul>
   </div>
@@ -274,188 +249,6 @@
                       class="svg-icon svg-icon-2x svg-icon-danger"
                     ></span>
                   </span>
-                </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  School Music Festival
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >by Rose Liam</span
-                >
-              </td>
-              <td class="text-end">
-                <span class="text-dark fw-bolder d-block fs-7"
-                  >4:20PM, 03 Sep</span
-                >
-                <span class="text-muted fw-bold d-block fs-8">Date</span>
-              </td>
-              <td class="text-end">
-                <a
-                  href="#"
-                  class="
-                    btn btn-sm btn-icon btn-bg-light btn-active-color-primary
-                  "
-                >
-                  <i class="bi bi-three-dots fs-5"></i>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-          <!-- end::Table body -->
-        </table>
-      </div>
-      <!-- end::Table -->
-    </div>
-    <!-- end::Tap pane -->
-    <!-- begin::Tap pane -->
-    <div
-      class="tab-pane fade"
-      [ngClass]="activeClass('kt_table_widget_8_tab_3')"
-      id="kt_table_widget_8_tab_3"
-    >
-      <!-- begin::Table container -->
-      <div class="table-responsive">
-        <!-- begin::Table -->
-        <table class="table align-middle gs-0 gy-3">
-          <!-- begin::Table head -->
-          <thead>
-            <tr>
-              <th class="p-0 w-50px"></th>
-              <th class="p-0 min-w-150px"></th>
-              <th class="p-0 min-w-120px"></th>
-            </tr>
-          </thead>
-          <!-- end::Table head -->
-          <!-- begin::Table body -->
-          <tbody>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px me-2">
-                  <span class="symbol-label bg-light-warning">
-                    <span
-                      [inlineSVG]="
-                        './assets/media/icons/duotune/general/gen024.svg'
-                      "
-                      class="svg-icon svg-icon-2x svg-icon-warning"
-                    ></span>
-                  </span>
-                </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Maths Championship
-                </a>
-                <span class="text-muted fw-bold d-block fs-7">By Tom Gere</span>
-              </td>
-              <td class="text-end">
-                <span class="text-dark fw-bolder d-block fs-7"
-                  >10:05PM, 25 Oct</span
-                >
-                <span class="text-muted fw-bold d-block fs-8">Date</span>
-              </td>
-              <td class="text-end">
-                <a
-                  href="#"
-                  class="
-                    btn btn-sm btn-icon btn-bg-light btn-active-color-primary
-                  "
-                >
-                  <i class="bi bi-three-dots fs-5"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px me-2">
-                  <span class="symbol-label bg-light-info">
-                    <span
-                      [inlineSVG]="
-                        './assets/media/icons/duotune/general/gen005.svg'
-                      "
-                      class="svg-icon svg-icon-2x svg-icon-info"
-                    ></span>
-                  </span>
-                </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Who Knows Geography
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >By Zoey Dylan</span
-                >
-              </td>
-              <td class="text-end">
-                <span class="text-dark fw-bolder d-block fs-7"
-                  >3:22PM, 07 Sep</span
-                >
-                <span class="text-muted fw-bold d-block fs-8">Date</span>
-              </td>
-              <td class="text-end">
-                <a
-                  href="#"
-                  class="
-                    btn btn-sm btn-icon btn-bg-light btn-active-color-primary
-                  "
-                >
-                  <i class="bi bi-three-dots fs-5"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px me-2">
-                  <span class="symbol-label bg-light-primary">
-                    <span
-                      [inlineSVG]="
-                        './assets/media/icons/duotune/general/gen005.svg'
-                      "
-                      class="svg-icon svg-icon-2x svg-icon-primary"
-                    ></span>
-                  </span>
-                </div>
-              </td>
-              <td>
-                <a
-                  href="#"
-                  class="text-dark fw-bolder text-hover-primary mb-1 fs-6"
-                >
-                  Napoleon Days
-                </a>
-                <span class="text-muted fw-bold d-block fs-7"
-                  >By Luke Owen</span
-                >
-              </td>
-              <td class="text-end">
-                <span class="text-dark fw-bolder d-block fs-7"
-                  >1:20PM, 02 Dec</span
-                >
-                <span class="text-muted fw-bold d-block fs-8">Date</span>
-              </td>
-              <td class="text-end">
-                <a
-                  href="#"
-                  class="
-                    btn btn-sm btn-icon btn-bg-light btn-active-color-primary
-                  "
-                >
-                  <i class="bi bi-three-dots fs-5"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <div class="symbol symbol-50px me-2">
                 </div>
               </td>
               <td>
