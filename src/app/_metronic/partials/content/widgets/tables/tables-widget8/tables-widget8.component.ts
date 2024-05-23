@@ -108,9 +108,15 @@ export class TablesWidget8Component implements OnInit {
     // Add your logic here to handle the month change
   }
 
-  openModal() {
-    this.isModalOpen = true;
+  closeModal() {
+    this.resetModal();
   }
- 
+
+  resetModal(): void {
+    this.isModalOpen = false;
+    setTimeout(() => {
+      this.isModalOpen = true; // Réinitialiser l'état du modal
+    }, 0); // Utilisation de setTimeout pour permettre la réinitialisation après une brève pause
+  }
   
 }

@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import {HttpClient}from '@angular/common/http';
 import{Observable} from 'rxjs';
 import{Vehicule} from './vehicule.model';
+import { ChangeDetectorRef } from '@angular/core';
 
 
-const baseUrl='http://localhost:8087/api/v1/vehicules';
+const baseUrl='http://localhost:8089/api/v1/vehicules';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,6 +25,9 @@ export class VehiculeService {
     return this.http.put<Vehicule>(`${baseUrl}/${Vehicule.id}`, Vehicule);
   }
   
-  
+  getByImmatriculation(immatricule: string): Observable<Vehicule> {
+    return this.http.get<Vehicule>(`${baseUrl}/immatricule/${immatricule}`);
+  }
+
   
 }

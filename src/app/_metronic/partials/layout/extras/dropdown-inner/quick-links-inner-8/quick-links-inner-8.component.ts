@@ -29,6 +29,8 @@ export class QuickLinksInnerComponent8  implements OnInit{
   constructor(
     private demandeService: DemandeService) { }
   ngOnInit(): void {
+  
+
     throw new Error('Method not implemented.');
   }
 
@@ -68,7 +70,10 @@ export class QuickLinksInnerComponent8  implements OnInit{
   }
 
 closeModal() {
-  this.isModalOpen = false; // Fermer le modèle
+  this.isModalOpen = false; 
+ 
 }
+
+
 
 }

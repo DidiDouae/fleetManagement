@@ -16,23 +16,17 @@ export class TablesWidget13Component implements OnInit {
     this.fetchVehicules();
     
   }
-
   fetchVehicules(): void {
     this.vehiculeService.getAll().subscribe(
       data => {
         this.vehicules = data;
-        console.log('Tester ');
-        console.log(this.vehicules);
-        this.cdr.detectChanges(); ///////////// Trigger change detection
-        
+        this.cdr.detectChanges();
       },
-      
       error => {
         console.error('Error fetching vehicles: ', error);
       }
     );
   }
-
   
   delete(id:any):any {
     this.vehiculeService.delete(id).subscribe(()=>{ this.vehicules=this.vehicules.filter(Vehicule=>Vehicule.id!==id);
