@@ -18,7 +18,7 @@
   <div class="separator my-2"></div>
 
   <div class="menu-item px-5">
-    <a routerLink="/crafted/pages/profile" class="menu-link px-5">
+    <a routerLink="/" class="menu-link px-5">
       Mon Profile 
     </a>
   </div>
@@ -45,11 +45,7 @@
           "
         >
           {{ language.name }}{{ " " }}
-          <img
-            class="w-15px h-15px rounded-1 ms-2"
-            [src]="language.flag"
-            alt="metronic"
-          />
+          
         </span>
       </span>
     </a>
@@ -65,7 +61,6 @@
           [ngClass]="l.lang === language.lang ? 'active' : ''"
         >
           <span class="symbol symbol-20px me-4">
-            <img class="rounded-1" [src]="l.flag" alt="metronic" />
           </span>
           {{ l.name }}
         </a>
@@ -74,7 +69,7 @@
   </div>
 
   <div class="menu-item px-5 my-1">
-    <a routerLink="/crafted/account/settings" class="menu-link px-5">
+    <a routerLink="/" class="menu-link px-5">
       Paramètres  Compte   </a>
   </div>
 
